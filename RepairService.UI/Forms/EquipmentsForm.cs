@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RepairService.Context.Manager;
 
 namespace RepairService.UI.Forms
 {
@@ -55,10 +56,13 @@ namespace RepairService.UI.Forms
                 orders = isCreatedAt ? orders.OrderBy(x => x.CreatedAt).AsQueryable() : orders.OrderByDescending(x => x.CreatedAt).AsQueryable();
                 foreach (var order in orders.ToList())
                 {
-                    var item = new OrderView(order);
-                    item.Parent = flowLayoutPanel1;
+                    CreateOrderViewItem(order);
                 }
             }
+        }
+        private void CreateOrderViewItem(Order order) {
+            var item = new OrderView(order);
+            item.Parent = flowLayoutPanel1;
         }
         private void UpdateFilter()
         {
@@ -109,6 +113,24 @@ namespace RepairService.UI.Forms
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             CreateOrderView(checkBox1.Checked);
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            var form = new AddOrdersForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                using (var db = new RepairServiceContext())
+                {
+                    var ord = form.Order;
+                    ord.ClientId = Current.CurrentUser.Id;
+                    db.Orders.Add(form.Order);
+                    db.SaveChanges();
+                    var order = 
+                        db.Orders.Include(x => x.Equipment).Include(x => x.Equipment.EquipmentType).Include(x => x.BrokenType).First(x=>x.Id == form.Order.Id);
+                    CreateOrderViewItem(order);
+                 }
+            }
         }
     }
 }

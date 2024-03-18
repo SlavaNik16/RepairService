@@ -27,7 +27,7 @@ namespace RepairService.Context.Models
         public string Description { get; set; } = null;
 
         [Required]
-        public string Priority { get; set; }
+        public int Priority { get; set; }
 
         public StatusType Status { get; set; } = StatusType.notComplete;
 

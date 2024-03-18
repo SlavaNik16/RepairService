@@ -43,8 +43,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBoxSearch);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.comboBoxBrokenType);
             this.panel1.Controls.Add(this.comboBoxequipmentType);
@@ -142,6 +142,7 @@
             this.buttonEnter.TabIndex = 3;
             this.buttonEnter.Text = "Добавить";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // flowLayoutPanel1
             // 
