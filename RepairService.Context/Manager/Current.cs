@@ -1,0 +1,15 @@
+﻿using RepairService.Context.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RepairService.Context.Manager
+{
+    public static class Current
+    {
+        public static User CurrentUser { get; set; }
+
+    }
+}
