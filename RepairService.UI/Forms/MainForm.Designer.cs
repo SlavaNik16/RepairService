@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.формыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оборудованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.запчастиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equipmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sparesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelFIO = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelRole = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,23 +54,24 @@
             // формыToolStripMenuItem
             // 
             this.формыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оборудованиеToolStripMenuItem,
-            this.запчастиToolStripMenuItem});
+            this.equipmentsToolStripMenuItem,
+            this.sparesToolStripMenuItem});
             this.формыToolStripMenuItem.Name = "формыToolStripMenuItem";
             this.формыToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
             this.формыToolStripMenuItem.Text = "Формы";
             // 
-            // оборудованиеToolStripMenuItem
+            // equipmentsToolStripMenuItem
             // 
-            this.оборудованиеToolStripMenuItem.Name = "оборудованиеToolStripMenuItem";
-            this.оборудованиеToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.оборудованиеToolStripMenuItem.Text = "Оборудование";
+            this.equipmentsToolStripMenuItem.Name = "equipmentsToolStripMenuItem";
+            this.equipmentsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.equipmentsToolStripMenuItem.Text = "Оборудование";
+            this.equipmentsToolStripMenuItem.Click += new System.EventHandler(this.equipmentsToolStripMenuItem_Click);
             // 
-            // запчастиToolStripMenuItem
+            // sparesToolStripMenuItem
             // 
-            this.запчастиToolStripMenuItem.Name = "запчастиToolStripMenuItem";
-            this.запчастиToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.запчастиToolStripMenuItem.Text = "Запчасти";
+            this.sparesToolStripMenuItem.Name = "sparesToolStripMenuItem";
+            this.sparesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.sparesToolStripMenuItem.Text = "Запчасти";
             // 
             // statusStrip1
             // 
@@ -119,8 +120,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem формыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оборудованиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem запчастиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equipmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sparesToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFIO;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelRole;
