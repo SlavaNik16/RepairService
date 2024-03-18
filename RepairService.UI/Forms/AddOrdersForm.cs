@@ -18,12 +18,10 @@ namespace RepairService.UI.Forms
         public AddOrdersForm()
         {
             InitializeComponent();
+            Text = "Добавить заказ";
+            buttonEnter.Text = "Добавить";
             comboBoxBrokenType.DisplayMember = nameof(BrokenType.Title);
             comboBoxRequipment.DisplayMember = nameof(Equipment.Title);
-        }
-
-        private void AddOrdersForm_Load(object sender, EventArgs e)
-        {
             using (var db = new RepairServiceContext())
             {
                 comboBoxBrokenType.Items.Clear();
@@ -35,6 +33,18 @@ namespace RepairService.UI.Forms
                 comboBoxBrokenType.SelectedIndex = 0;
                 comboBoxRequipment.SelectedIndex = 0;
             }
+        }
+        public AddOrdersForm(Order order):this()
+        {
+            this.Order = order;
+            textBoxDesc.Text = order.Description;
+            numericUpDownPrioritet.Value = order.Priority;
+            comboBoxRequipment.SelectedItem = comboBoxRequipment.Items.Cast<Equipment>().FirstOrDefault(x => x.Id == order.EquipmentId);
+            comboBoxBrokenType.SelectedItem = comboBoxBrokenType.Items.Cast<BrokenType>().FirstOrDefault(x => x.Id == order.BrokenTypeId);
+        }
+
+        private void AddOrdersForm_Load(object sender, EventArgs e)
+        {
         }
 
         private void comboBoxRequipment_SelectedIndexChanged(object sender, EventArgs e)
