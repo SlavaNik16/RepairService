@@ -46,6 +46,7 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(35, 72);
             this.checkedListBox1.Name = "checkedListBox1";

@@ -77,21 +77,21 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Font = new System.Drawing.Font("MS UI Gothic", 14F);
+            this.textBoxPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
             this.textBoxPassword.Location = new System.Drawing.Point(224, 145);
             this.textBoxPassword.MaxLength = 60;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(575, 35);
+            this.textBoxPassword.Size = new System.Drawing.Size(575, 42);
             this.textBoxPassword.TabIndex = 4;
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Font = new System.Drawing.Font("MS UI Gothic", 14F);
+            this.textBoxLogin.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
             this.textBoxLogin.Location = new System.Drawing.Point(224, 43);
             this.textBoxLogin.MaxLength = 60;
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(575, 35);
+            this.textBoxLogin.Size = new System.Drawing.Size(575, 42);
             this.textBoxLogin.TabIndex = 3;
             // 
             // label3

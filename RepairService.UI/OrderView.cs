@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RepairService.UI.Forms;
 using System.Data.Entity.Migrations;
+using RepairService.Context.Manager;
 
 namespace RepairService.UI
 {
@@ -48,6 +49,12 @@ namespace RepairService.UI
             labelBrokenType.Text = order.BrokenType.Title;
             labelEquippmentsTitle.Text = order.Equipment.Title;
             labelEqipmentsType.Text = order.Equipment.EquipmentType.Title;
+
+            var user = Current.CurrentUser;
+            buttonEdit.Enabled = user.RoleType != RoleTypes.User;
+            buttonRemove.Enabled = user.RoleType == RoleTypes.Admin;
+            изменитьСостоянияРаботыToolStripMenuItem.Enabled = user.RoleType != RoleTypes.User;
+            добавитьВОтчетToolStripMenuItem.Enabled = user.RoleType != RoleTypes.User;
         }
         private void buttonEdit_Click(object sender, EventArgs e)
         {
