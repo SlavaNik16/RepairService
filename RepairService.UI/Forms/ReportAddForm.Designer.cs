@@ -105,6 +105,7 @@
             this.buttonEnter.TabIndex = 20;
             this.buttonEnter.Text = "Создать";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
             // 
             // label2
             // 

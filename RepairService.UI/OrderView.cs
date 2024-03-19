@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RepairService.UI.Forms;
+using System.Data.Entity.Migrations;
 
 namespace RepairService.UI
 {
@@ -97,15 +98,10 @@ namespace RepairService.UI
                     var report = form.Report;
                     report.OrderId = ord.Id;
 
-                    //report.SparesCounts.Clear();
-                    //var ids = form.GetSpearesIds().Select(x=>x.Id);
-                    //var spareCounts = form.GetSpearesIds();
-                    //var spares = db.SparesCounts.Where(x=>spareCounts.Select(i=>i.SparesTypeId).Contains(x.SparesTypeId) && spareCounts.Select(i=>i.Count).Contains(x.Count)).ToList();
-                    //db.SparesCounts.AddRange(spareCounts);
-                    //db.SaveChanges();
-
-                    //report.SparesCounts = db.SparesCounts.Where(t => ids.Contains(t.Id)).ToList();
-                    db.Reports.Add(report);
+                    report.SparesCounts.Clear();
+                    var ids = form.GetSpearesIds().Select(x=>x.Id);
+                    report.SparesCounts = db.SparesCounts.Where(t => ids.Contains(t.Id)).ToList();
+                    db.Reports.AddOrUpdate(report);
                     db.SaveChanges();
                     order = ord;
 

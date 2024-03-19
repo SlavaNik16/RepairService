@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -74,6 +75,28 @@ namespace RepairService.UI.Forms
                 }
             }
             return list;
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            using (var db = new RepairServiceContext())
+            {
+                var spares = GetSpearesIds();
+                foreach (var item in spares)
+                {
+                    var sparesDb = db.SparesCounts.ToList();
+                    if (!sparesDb.Select(x => new 
+                    {
+                        x.SparesTypeId,
+                        x.Count
+                    }).Contains(new { item.SparesTypeId, item.Count}))
+                    {
+                        db.SparesCounts.Add(item);
+                    }
+                }
+                db.SaveChanges();
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }
