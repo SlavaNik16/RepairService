@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.buttonReport = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxBrokenType = new System.Windows.Forms.ComboBox();
             this.comboBoxequipmentType = new System.Windows.Forms.ComboBox();
@@ -43,6 +44,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonReport);
             this.panel1.Controls.Add(this.textBoxSearch);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -57,15 +59,16 @@
             this.panel1.Size = new System.Drawing.Size(1607, 213);
             this.panel1.TabIndex = 0;
             // 
-            // label3
+            // buttonReport
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(12, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(370, 35);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Поиск по оборудованию";
+            this.buttonReport.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
+            this.buttonReport.Location = new System.Drawing.Point(1302, 22);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(277, 76);
+            this.buttonReport.TabIndex = 11;
+            this.buttonReport.Text = "Список отчетов";
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Visible = false;
             // 
             // textBoxSearch
             // 
@@ -75,6 +78,16 @@
             this.textBoxSearch.Size = new System.Drawing.Size(667, 42);
             this.textBoxSearch.TabIndex = 9;
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
+            this.label3.Location = new System.Drawing.Point(12, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(370, 35);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Поиск по оборудованию";
             // 
             // label1
             // 
@@ -162,7 +175,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "EquipmentsForm";
-            this.Text = "EquipmentsForm";
+            this.Text = "Добавление оборудования";
             this.Load += new System.EventHandler(this.EquipmentsForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -182,5 +195,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonReport;
     }
 }

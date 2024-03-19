@@ -65,6 +65,10 @@
     <Compile Include="Migrations\202403182202045_Init3.designer.cs">
       <DependentUpon>202403182202045_Init3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403191232106_Inir5.cs" />
+    <Compile Include="Migrations\202403191232106_Inir5.designer.cs">
+      <DependentUpon>202403191232106_Inir5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BrokenType.cs" />
     <Compile Include="Models\Enums\RoleTypes.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403182202045_Init3.resx">
       <DependentUpon>202403182202045_Init3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403191232106_Inir5.resx">
+      <DependentUpon>202403191232106_Inir5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

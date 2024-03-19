@@ -16,6 +16,7 @@ namespace RepairService.UI.Forms
 {
     public partial class EquipmentsForm : Form
     {
+        public List<Report> reports = new List<Report>();
         public EquipmentsForm()
         {
             InitializeComponent(); 
@@ -63,7 +64,17 @@ namespace RepairService.UI.Forms
         private void CreateOrderViewItem(Order order) {
             var item = new OrderView(order);
             item.Parent = flowLayoutPanel1;
+            item.ReportAdd += Item_ReportAdd1;
         }
+
+        private void Item_ReportAdd1(Report report)
+        {
+            reports.Add(report);
+            buttonReport.Visible = reports.Count != 0;
+            
+        }
+
+
         private void UpdateFilter()
         {
             foreach(var item in flowLayoutPanel1.Controls)

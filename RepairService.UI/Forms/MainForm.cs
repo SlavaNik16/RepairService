@@ -30,5 +30,13 @@ namespace RepairService.UI
             form.ShowDialog();
             this.Show();
         }
+
+        private void sparesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new AddFormSpearesTypeForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

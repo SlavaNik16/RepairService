@@ -72,6 +72,7 @@
             this.sparesToolStripMenuItem.Name = "sparesToolStripMenuItem";
             this.sparesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.sparesToolStripMenuItem.Text = "Запчасти";
+            this.sparesToolStripMenuItem.Click += new System.EventHandler(this.sparesToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -106,7 +107,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Меню";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

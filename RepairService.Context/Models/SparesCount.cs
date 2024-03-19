@@ -14,7 +14,7 @@ namespace RepairService.Context.Models
         public int Id { get; set; }
 
         [Required]
-        public int Count { get; set; }
+        public int Count { get; set; } = 1;
 
         public int SparesTypeId { get; set; }
         public SparesType SparesType { get; set; }

@@ -16,9 +16,11 @@ namespace RepairService.Context.Models
         public Order Order { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } = 0;
 
         public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
+
+        public string Reason { get; set; }
 
         public ICollection<SparesCount> SparesCounts { get; set; }
 

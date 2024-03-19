@@ -56,10 +56,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(219, 50);
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
+            this.label1.Location = new System.Drawing.Point(263, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(441, 28);
+            this.label1.Size = new System.Drawing.Size(302, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "ООО \"Техносервис\"";
             // 
@@ -133,6 +133,7 @@
             this.buttonExit.TabIndex = 1;
             this.buttonExit.Text = "Выйти";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonEnter
             // 
@@ -154,7 +155,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "AuthorizationForm";
-            this.Text = "AuthorizationForm";
+            this.Text = "Авторизация";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
