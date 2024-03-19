@@ -62,9 +62,9 @@
             // buttonReport
             // 
             this.buttonReport.Font = new System.Drawing.Font("MS Reference Sans Serif", 14F);
-            this.buttonReport.Location = new System.Drawing.Point(1302, 22);
+            this.buttonReport.Location = new System.Drawing.Point(1110, 22);
             this.buttonReport.Name = "buttonReport";
-            this.buttonReport.Size = new System.Drawing.Size(277, 76);
+            this.buttonReport.Size = new System.Drawing.Size(469, 76);
             this.buttonReport.TabIndex = 11;
             this.buttonReport.Text = "Список отчетов";
             this.buttonReport.UseVisualStyleBackColor = true;

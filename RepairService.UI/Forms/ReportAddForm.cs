@@ -17,6 +17,7 @@ namespace RepairService.UI.Forms
     public partial class ReportAddForm : Form
     {
         public Report Report { get; set; } = new Report();
+        public List<int> list = new List<int>();
         public ReportAddForm(Order order)
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace RepairService.UI.Forms
         {
             CreateOrderViewItemAdd();
         }
-        public List<SparesCount> GetSpearesIds()
+        private List<SparesCount> GetSpearesIds()
         {
             var list = new List<SparesCount>();
             foreach (var item in flowLayoutPanel1.Controls)
@@ -76,25 +77,29 @@ namespace RepairService.UI.Forms
             }
             return list;
         }
-
+        public List<int> GetDBSpearesIds()
+        {
+            return list;
+        }
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             using (var db = new RepairServiceContext())
             {
-                var spares = GetSpearesIds();
-                foreach (var item in spares)
+                list = new List<int>();
+                var getSpearesIds = GetSpearesIds();
+                foreach (var item in getSpearesIds)
                 {
                     var sparesDb = db.SparesCounts.ToList();
-                    if (!sparesDb.Select(x => new 
+                    var item3 = sparesDb.FirstOrDefault(x => x.SparesTypeId == item.SparesTypeId && x.Count == item.Count);
+                    if(item3 == null)
                     {
-                        x.SparesTypeId,
-                        x.Count
-                    }).Contains(new { item.SparesTypeId, item.Count}))
-                    {
-                        db.SparesCounts.Add(item);
+                         db.SparesCounts.Add(item);
+                        db.SaveChanges();
+                        item3 = db.SparesCounts.First(x => x.SparesTypeId == item.SparesTypeId && x.Count == item.Count);
                     }
+                    list.Add(item3.Id);
+                    
                 }
-                db.SaveChanges();
                 DialogResult = DialogResult.OK;
             }
         }

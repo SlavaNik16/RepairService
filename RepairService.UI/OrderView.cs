@@ -104,11 +104,16 @@ namespace RepairService.UI
                     ord.Status = StatusType.complete;
                     var report = form.Report;
                     report.OrderId = ord.Id;
-
+                    var reportExist = db.Reports.Where(x => x.OrderId == report.OrderId).ToList();
+                    if (reportExist.Count != 0)
+                    {
+                        db.Reports.RemoveRange(reportExist);
+                        db.SaveChanges();
+                    }
                     report.SparesCounts.Clear();
-                    var ids = form.GetSpearesIds().Select(x=>x.Id);
+                    var ids = form.GetDBSpearesIds();
                     report.SparesCounts = db.SparesCounts.Where(t => ids.Contains(t.Id)).ToList();
-                    db.Reports.AddOrUpdate(report);
+                    db.Reports.Add(report);
                     db.SaveChanges();
                     order = ord;
 
